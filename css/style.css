@@ -884,6 +884,8 @@ section > .container > p.eyebrow + h2{margin-top:0;}
 }
 .chatbot-input input{
   flex:1;
+  min-width:0;
+  width:100%;
   border:none;
   outline:none;
   background:transparent;
