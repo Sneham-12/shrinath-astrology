@@ -253,3 +253,131 @@ if (isFinePointer && !prefersReducedMotion) {
     });
   }
 }
+
+// ---------- Chatbot widget ----------
+(function () {
+  const WA_NUMBER = '917976975872';
+  const chatbotEl = document.getElementById('chatbot');
+  const toggleBtn = document.getElementById('chatbotToggle');
+  const closeBtn = document.getElementById('chatbotClose');
+  const bodyEl = document.getElementById('chatbotBody');
+  const quickRepliesEl = document.getElementById('chatbotQuickReplies');
+  const formEl = document.getElementById('chatbotForm');
+  const inputEl = document.getElementById('chatbotInput');
+  if (!chatbotEl || !toggleBtn || !bodyEl) return;
+
+  const SERVICES = [
+    { label: 'Kundli & Horoscope', text: 'Kundli & Horoscope reading' },
+    { label: 'Love & Marriage Matching', text: 'Love & Marriage Matching (Kundli Milan)' },
+    { label: 'Vastu Shastra', text: 'Vastu Shastra consultation' },
+    { label: 'Palmistry', text: 'Palmistry (Hast Rekha) reading' },
+    { label: 'Tarot Reading', text: 'Tarot Reading session' },
+    { label: 'Something else', text: null }
+  ];
+
+  let chatStarted = false;
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>"']/g, (m) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[m]));
+  }
+
+  function scrollToBottom() {
+    bodyEl.scrollTop = bodyEl.scrollHeight;
+  }
+
+  function addMessage(sender, html) {
+    const div = document.createElement('div');
+    div.className = 'msg ' + sender;
+    div.innerHTML = `<div class="bubble">${html}</div>`;
+    bodyEl.appendChild(div);
+    scrollToBottom();
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'msg bot';
+    div.innerHTML = '<div class="bubble typing-dots"><span></span><span></span><span></span></div>';
+    bodyEl.appendChild(div);
+    scrollToBottom();
+    return div;
+  }
+
+  function waLink(text, label) {
+    const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    return `<a class="wa-link" href="${url}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> ${label}</a>`;
+  }
+
+  function botReply(html, delay) {
+    const typingEl = showTyping();
+    setTimeout(() => {
+      typingEl.remove();
+      addMessage('bot', html);
+    }, delay || 700);
+  }
+
+  function renderQuickReplies(options) {
+    quickRepliesEl.innerHTML = '';
+    options.forEach((opt) => {
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'quick-reply';
+      btn.textContent = opt.label;
+      btn.addEventListener('click', () => handleQuickReply(opt));
+      quickRepliesEl.appendChild(btn);
+    });
+  }
+
+  function clearQuickReplies() {
+    quickRepliesEl.innerHTML = '';
+  }
+
+  function handleQuickReply(opt) {
+    addMessage('user', escapeHtml(opt.label));
+    clearQuickReplies();
+    if (opt.text) {
+      const html = `Wonderful! Let's get you connected with Shrinath Ji for <strong>${escapeHtml(opt.label)}</strong>.` +
+        waLink(`Namaste Shrinath Ji, I would like to book a consultation for ${opt.text}.`, 'Continue on WhatsApp');
+      botReply(html, 800);
+    } else {
+      botReply("Sure — please type your question below and I'll connect you with Shrinath Ji on WhatsApp.", 700);
+    }
+  }
+
+  function greet() {
+    const html = "🙏 Namaste! I'm the Shrinath Astrology assistant. How can I help you today?";
+    const typingEl = showTyping();
+    setTimeout(() => {
+      typingEl.remove();
+      addMessage('bot', html);
+      renderQuickReplies(SERVICES);
+    }, 600);
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    const isOpen = chatbotEl.classList.toggle('open');
+    if (isOpen && !chatStarted) {
+      chatStarted = true;
+      greet();
+    }
+  });
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => chatbotEl.classList.remove('open'));
+  }
+
+  if (formEl && inputEl) {
+    formEl.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = inputEl.value.trim();
+      if (!val) return;
+      addMessage('user', escapeHtml(val));
+      inputEl.value = '';
+      clearQuickReplies();
+      const html = "Got it! Let's continue this on WhatsApp so Shrinath Ji can help you directly." +
+        waLink(`Namaste Shrinath Ji, ${val}`, 'Continue on WhatsApp');
+      botReply(html, 800);
+    });
+  }
+})();

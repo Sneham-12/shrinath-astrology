@@ -66,7 +66,7 @@
       <i class="fa-solid fa-sun icon-sun"></i>
       <i class="fa-solid fa-moon icon-moon"></i>
     </button>
-    <a href="https://wa.me/918824763960?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp nav-cta" target="_blank" rel="noopener">
+    <a href="https://wa.me/917976975872?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp nav-cta" target="_blank" rel="noopener">
       <i class="fa-brands fa-whatsapp"></i> Book Now
     </a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -87,7 +87,7 @@
     <h1 class="reveal">Unlock the Secrets<br>Written in <span class="gradient-text">Your Stars</span></h1>
     <p class="hero-sub reveal">Shrinath Astrology brings you 15+ years of authentic Vedic wisdom — Kundli, Vastu, Tarot &amp; more. Get clarity on love, career, and life, one consultation away.</p>
     <div class="hero-actions reveal">
-      <a href="https://wa.me/918824763960?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+      <a href="https://wa.me/917976975872?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
         <i class="fa-brands fa-whatsapp"></i> Book Consultation on WhatsApp
       </a>
       <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
@@ -133,7 +133,7 @@
         <li><i class="fa-solid fa-check"></i> 25,000+ Consultations Worldwide</li>
         <li><i class="fa-solid fa-check"></i> Available in Hindi &amp; English</li>
       </ul>
-      <a href="https://wa.me/918824763960" class="btn btn-whatsapp reveal" target="_blank" rel="noopener">
+      <a href="https://wa.me/917976975872" class="btn btn-whatsapp reveal" target="_blank" rel="noopener">
         <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
       </a>
     </div>
@@ -261,7 +261,7 @@
     <i class="fa-solid fa-moon cta-icon"></i>
     <h2>Ready to Discover What the Stars Hold for You?</h2>
     <p>Send a message now and get your first response within minutes.</p>
-    <a href="https://wa.me/918824763960?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+    <a href="https://wa.me/917976975872?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
       <i class="fa-brands fa-whatsapp"></i> Book Your Consultation Now
     </a>
   </div>
@@ -282,7 +282,7 @@
       <a href="#testimonials">Testimonials</a>
     </div>
     <div class="footer-social">
-      <a href="https://wa.me/918824763960" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="https://wa.me/917976975872" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
       <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
       <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
       <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
@@ -291,10 +291,30 @@
   <p class="footer-note">© 2026 Shrinath Astrology. All rights reserved. · Demo content for preview purposes.</p>
 </footer>
 
-<!-- Floating WhatsApp button -->
-<a href="https://wa.me/918824763960?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
+<!-- Chatbot widget -->
+<div class="chatbot" id="chatbot">
+  <div class="chatbot-panel" id="chatbotPanel">
+    <div class="chatbot-header">
+      <div class="chatbot-avatar"><i class="fa-solid fa-om"></i></div>
+      <div class="chatbot-title">
+        <strong>Shrinath Assistant</strong>
+        <span><i class="status-dot"></i> Typically replies instantly</span>
+      </div>
+      <button class="chatbot-close" id="chatbotClose" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="chatbot-body" id="chatbotBody"></div>
+    <div class="chatbot-quick-replies" id="chatbotQuickReplies"></div>
+    <form class="chatbot-input" id="chatbotForm">
+      <input type="text" id="chatbotInput" placeholder="Type your question..." autocomplete="off">
+      <button type="submit" aria-label="Send"><i class="fa-solid fa-paper-plane"></i></button>
+    </form>
+  </div>
+  <button class="chatbot-toggle" id="chatbotToggle" aria-label="Chat with us">
+    <i class="fa-solid fa-robot icon-open"></i>
+    <i class="fa-solid fa-xmark icon-close"></i>
+    <span class="chatbot-ping"></span>
+  </button>
+</div>
 
 <script src="js/script.js"></script>
 </body>
