@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shrinath Astrology | Vedic Astrologer & Consultant</title>
+<meta name="description" content="Shrinath Astrology - Authentic Vedic astrology consultations. Book your session instantly on WhatsApp.">
+<script>
+  (function(){
+    try{
+      var saved = localStorage.getItem('shrinath-theme');
+      document.documentElement.setAttribute('data-theme', saved === 'light' ? 'light' : 'dark');
+    }catch(e){}
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader">
+  <div class="preloader-ring">
+    <i class="fa-solid fa-sun"></i>
+  </div>
+  <p>Shrinath Astrology</p>
+</div>
+
+<!-- Scroll progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Planets background (both themes) -->
+<div class="planets-bg" aria-hidden="true">
+  <div class="planet planet-1"></div>
+  <div class="planet planet-2"></div>
+  <div class="planet planet-3">
+    <div class="planet-ring"></div>
+  </div>
+  <div class="planet planet-4"></div>
+  <div class="planet planet-5"></div>
+</div>
+
+<!-- Stars background (dark theme only) -->
+<div class="stars" id="stars"></div>
+<canvas class="star-canvas" id="starCanvas"></canvas>
+
+<!-- Navbar -->
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#home" class="logo">
+      <i class="fa-solid fa-sun"></i>
+      <span>Shrinath <em>Astrology</em></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark theme">
+      <i class="fa-solid fa-sun icon-sun"></i>
+      <i class="fa-solid fa-moon icon-moon"></i>
+    </button>
+    <a href="https://wa.me/918824763960?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp nav-cta" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Book Now
+    </a>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="orbit orbit-1"></div>
+  <div class="orbit orbit-2"></div>
+  <div class="zodiac-float z1"><i class="fa-solid fa-moon"></i></div>
+  <div class="zodiac-float z2"><i class="fa-solid fa-star"></i></div>
+  <div class="zodiac-float z3"><i class="fa-solid fa-gem"></i></div>
+  <div class="zodiac-float z4"><i class="fa-solid fa-hand-sparkles"></i></div>
+
+  <div class="container hero-inner">
+    <p class="eyebrow reveal">✦ Vedic Astrology &amp; Spiritual Guidance ✦</p>
+    <h1 class="reveal">Unlock the Secrets<br>Written in <span class="gradient-text">Your Stars</span></h1>
+    <p class="hero-sub reveal">Shrinath Astrology brings you 15+ years of authentic Vedic wisdom — Kundli, Vastu, Tarot &amp; more. Get clarity on love, career, and life, one consultation away.</p>
+    <div class="hero-actions reveal">
+      <a href="https://wa.me/918824763960?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Book Consultation on WhatsApp
+      </a>
+      <a href="#services" class="btn btn-outline btn-lg">Explore Services</a>
+    </div>
+
+    <div class="stats reveal">
+      <div class="stat">
+        <span class="stat-num" data-target="15">0</span><span class="stat-plus">+</span>
+        <p>Years Experience</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="25000">0</span><span class="stat-plus">+</span>
+        <p>Consultations Done</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="98">0</span><span class="stat-plus">%</span>
+        <p>Client Satisfaction</p>
+      </div>
+      <div class="stat">
+        <span class="stat-num" data-target="4.9">0</span><span class="stat-plus"></span>
+        <p>Average Rating ★</p>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span></span>Scroll</div>
+</section>
+
+<!-- About -->
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-media reveal">
+      <div class="about-ring" id="zodiacRing">
+        <div class="about-photo"><i class="fa-solid fa-om"></i></div>
+      </div>
+    </div>
+    <div class="about-text">
+      <p class="eyebrow reveal">✦ About The Astrologer ✦</p>
+      <h2 class="reveal">Guided by the Stars,<br>Trusted by Thousands</h2>
+      <p class="reveal">Pandit Shrinath Ji is a renowned Vedic astrologer with over 15 years of experience helping people navigate love, career, health, and life's biggest decisions through the ancient science of astrology.</p>
+      <p class="reveal">Every reading blends traditional Vedic principles with practical, modern guidance — delivered with honesty, warmth, and complete confidentiality.</p>
+      <ul class="about-list reveal">
+        <li><i class="fa-solid fa-check"></i> Certified Vedic &amp; Nadi Astrologer</li>
+        <li><i class="fa-solid fa-check"></i> 25,000+ Consultations Worldwide</li>
+        <li><i class="fa-solid fa-check"></i> Available in Hindi &amp; English</li>
+      </ul>
+      <a href="https://wa.me/918824763960" class="btn btn-whatsapp reveal" target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section class="services" id="services">
+  <div class="container">
+    <p class="eyebrow reveal center">✦ Our Services ✦</p>
+    <h2 class="reveal center">Astrology Services Tailored for You</h2>
+    <div class="service-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-book-open"></i></div>
+        <h3>Kundli &amp; Horoscope</h3>
+        <p>Detailed birth chart analysis to understand your life path, strengths and challenges.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+        <h3>Love &amp; Marriage Matching</h3>
+        <p>Kundli milan &amp; compatibility reports for a happy, harmonious married life.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-city"></i></div>
+        <h3>Vastu Shastra</h3>
+        <p>Balance energy in your home &amp; workplace for prosperity, peace and good health.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-hand"></i></div>
+        <h3>Palmistry (Hast Rekha)</h3>
+        <p>Decode the lines of your palm to reveal insights about your past, present &amp; future.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-layer-group"></i></div>
+        <h3>Tarot Reading</h3>
+        <p>Intuitive tarot sessions for quick clarity on love, career &amp; important decisions.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-briefcase"></i></div>
+        <h3>Career &amp; Business</h3>
+        <p>Astrological guidance to choose the right path and timing for career &amp; business growth.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-hashtag"></i></div>
+        <h3>Numerology</h3>
+        <p>Discover how numbers influence your name, destiny and major life decisions.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="service-icon"><i class="fa-solid fa-gem"></i></div>
+        <h3>Gemstone Consultation</h3>
+        <p>Personalized gemstone recommendations to strengthen favorable planetary energy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Why choose us -->
+<section class="why" id="why">
+  <div class="container">
+    <p class="eyebrow reveal center">✦ Why Choose Us ✦</p>
+    <h2 class="reveal center">Trusted Guidance, Real Results</h2>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <i class="fa-solid fa-shield-halved"></i>
+        <h3>100% Confidential</h3>
+        <p>Your personal details and conversations always stay private.</p>
+      </div>
+      <div class="why-card reveal">
+        <i class="fa-solid fa-om"></i>
+        <h3>Authentic Vedic Methods</h3>
+        <p>Rooted in traditional scriptures, not generic predictions.</p>
+      </div>
+      <div class="why-card reveal">
+        <i class="fa-brands fa-whatsapp"></i>
+        <h3>Instant WhatsApp Booking</h3>
+        <p>Message us anytime — quick replies, flexible scheduling.</p>
+      </div>
+      <div class="why-card reveal">
+        <i class="fa-solid fa-user-check"></i>
+        <h3>Personalized Guidance</h3>
+        <p>Every session is tailored to your unique birth chart &amp; concerns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <p class="eyebrow reveal center">✦ Client Stories ✦</p>
+    <h2 class="reveal center">What Our Clients Say</h2>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars-row">★★★★★</div>
+        <p>"Shrinath Ji's Kundli reading was incredibly accurate. His guidance on my career change gave me so much clarity and confidence."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">A</div>
+          <div><strong>Ananya S.</strong><span>Mumbai</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars-row">★★★★★</div>
+        <p>"Booking on WhatsApp was so easy and the consultation felt personal and warm. Highly recommend for marriage matching."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">R</div>
+          <div><strong>Rohit K.</strong><span>Delhi</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars-row">★★★★★</div>
+        <p>"The Vastu suggestions for our new home made a real difference. Genuinely grateful for such honest advice."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">P</div>
+          <div><strong>Priya M.</strong><span>Bengaluru</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-bg"></div>
+  <div class="container cta-inner reveal">
+    <i class="fa-solid fa-moon cta-icon"></i>
+    <h2>Ready to Discover What the Stars Hold for You?</h2>
+    <p>Send a message now and get your first response within minutes.</p>
+    <a href="https://wa.me/918824763960?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Book Your Consultation Now
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <i class="fa-solid fa-sun"></i>
+      <span>Shrinath <em>Astrology</em></span>
+      <p>Vedic wisdom for a modern life.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+    </div>
+    <div class="footer-social">
+      <a href="https://wa.me/918824763960" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <p class="footer-note">© 2026 Shrinath Astrology. All rights reserved. · Demo content for preview purposes.</p>
+</footer>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/918824763960?text=Namaste%20Shrinath%20Ji%2C%20I%20would%20like%20to%20book%20a%20consultation." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>
